@@ -1,0 +1,107 @@
+@media (max-width:768px) {
+    .top-card{
+        width: 180px;
+        font-size: 12px;
+    }
+    .profile span{
+        font-size: 12px;
+    }
+    .album-text{
+        margin-left: 8px;
+        font-weight: 500;
+    }
+    .main-card-holder{
+        gap: 16px;
+    }
+    .topcard-img{
+        width: 50px;
+        height: auto;
+    }
+    .title{
+        font-size: 24px;
+    }
+    .main-container{
+        margin-left: 0px;
+    }
+    .subtitle{
+        font-size: 20px;
+    }
+    .vertical-card-title{
+        display: none!important;
+    }
+    .vertical-card-subtitle{
+        font-size: 12px;
+    }
+    .vertical-card > img{
+        width: 120px;
+        height: 120px;
+        margin-bottom: 8px;
+    }
+    .vertical-card span{
+        display: inline;
+    }
+    .vertical-card-holder{
+        overflow-x: auto;
+        margin-bottom: 20px;
+    }
+    .vertical-card-holder::-webkit-scrollbar{
+        display: none;
+    }
+    .navs-arrows{
+        display: none;
+    }
+    .list-items li{
+        display: none;
+    }
+    .nav-container{
+        position: absolute;
+        z-index: 999;
+        width: 250px;
+        left: -290px;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav{
+        position: relative;
+    }
+    .logo{
+        display: flex;
+        justify-content: space-between;
+        padding-right: 16px;
+    }
+    .top-card:hover > img{
+        display: none;
+    }
+    .close{
+        display: block;
+    }
+    .menu{
+        display: block;
+    }
+
+    /**************
+        Playlist
+     **************/
+    .playlist-title{
+        font-size: 20px;
+    }
+    .playlist-header img{
+        width: 150px;
+    }
+    .playlist-heading,.playlist-info span{
+        font-size: 12px;
+    }
+    .album, .date-added{
+        display: none;
+    }
+    .table-row >:nth-child(3), .table-row >:nth-child(4){
+        display: none;
+    }
+    .playlist-table>:nth-child(1){
+        font-size: 13px;
+        font-weight: 500;
+        color: #fafafa;
+    }
+    .time{
+        font-size: 13px;
+    }
+}

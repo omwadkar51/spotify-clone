@@ -1,0 +1,268 @@
+
+<html lang="en">
+  <head>
+    <title>Spotify</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/font-awesome/css/">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/responsive.css">
+  </head>
+  <body onload="onPageload()">
+    <div class="container-fluid dark-background">
+        <div class="row no-gutters">
+            <div class="col-md-2">
+                <div class="nav-container">
+                    <div class="nav dark-background">
+                        <div class="logo">
+                            <img src="assets/Spotify_Logo_RGB_White.png" height="36" width="auto" alt="spotify-logo">
+                            <img  class="close" src="assets/icons/close.svg" alt="" onclick="displayMenu()">
+                        </div>
+                        <ul class="mt-4 sidebar-list">
+                            <li class="t-white">
+                                <div class="list-item-holder">
+                                    <!--                                <img src="assets/icons/home.svg" alt="">-->
+                                    <svg role="img" height="24" width="24" class="svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M12.5 3.247a1 1 0 00-1 0L4 7.577V20h4.5v-6a1 1 0 011-1h5a1 1 0 011 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 013 0l7.5 4.33a2 2 0 011 1.732V21a1 1 0 01-1 1h-6.5a1 1 0 01-1-1v-6h-3v6a1 1 0 01-1 1H3a1 1 0 01-1-1V7.577a2 2 0 011-1.732l7.5-4.33z"></path></svg>
+                                    <span>Home</span>
+                                </div>
+                            </li>
+                            <li class="t-white">
+                                <div class="list-item-holder">
+                                    <svg role="img" height="24" width="24" class="svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"></path></svg>
+                                    <span>Search</span>
+                                </div>
+                            </li>
+                            <li class="t-white">
+                                <div class="list-item-holder">
+                                    <svg role="img" height="24" width="24" class="svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M14.5 2.134a1 1 0 011 0l6 3.464a1 1 0 01.5.866V21a1 1 0 01-1 1h-6a1 1 0 01-1-1V3a1 1 0 01.5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1zm6 0a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1z"></path></svg>
+                                    <span>Your Library</span>
+                                </div>
+                            </li>
+                            <li class="t-white">
+                                <div class="list-item-holder">
+                                    <img src="assets/icons/add.svg" alt="">
+                                    <span>Create Playlist</span>
+                                </div>
+                            </li>
+                            <li class="t-white">
+                                <div class="list-item-holder">
+                                    <img src="assets/icons/Like.svg" alt="">
+                                    <span>Liked Songs</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="divider"></div>
+                        <div class="playlist">
+                            <ul class="list-items"></ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-10">
+                    <div class="holder">
+                        <div class="row no-gutters">
+                            <div class="col-md-12">
+                                <div class="top-bar">
+                                    <div class="menu" onclick="displayMenu()">
+                                        <img src="assets/icons/menu.svg" alt="">
+                                    </div>
+                                    <div class="navs-arrows">
+                                        <div class="charrot mr-2"><img src="assets/icons/fi-rr-angle-small-left.svg" alt=""></div>
+                                        <div class="charrot"><img src="assets/icons/fi-rr-angle-small-right.svg" alt=""></div>
+                                    </div>
+                                    <div class="profile">
+                                        <img src="assets/images/User_image.png" width="24px" height="24px" alt="">
+                                        <span class="text-white">Username</span>
+                                        <img src="assets/icons/fi-ss-caret-down.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="main-container">
+                                    <div class="title">
+                                        Good Morning
+                                    </div>
+                                    <div class="main-card-holder" id="main-card">
+                                        <a href="">
+                                            <div class="top-card">
+                                                <div>
+                                                    <img class="topcard-img" src="assets/images/album1.jfif" width="80" height="80" alt="">
+                                                    <span class="album-text">Liked Songs</span>
+                                                </div>
+                                                <img src="assets/icons/play_green.svg" alt="" class="play">
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="top-card">
+                                                <div>
+                                                    <img class="topcard-img" src="assets/images/album1.jfif" width="80" height="80" alt="">
+                                                    <span class="album-text">Liked Songs</span>
+                                                </div>
+                                                <img src="assets/icons/play_green.svg" alt="" class="play">
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="top-card">
+                                                <div>
+                                                    <img class="topcard-img" src="assets/images/album1.jfif" width="80" height="80" alt="">
+                                                    <span class="album-text">Liked Songs</span>
+                                                </div>
+                                                <img src="assets/icons/play_green.svg" alt="" class="play">
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="top-card">
+                                                <div>
+                                                    <img class="topcard-img" src="assets/images/album1.jfif" width="80" height="80" alt="">
+                                                    <span class="album-text">Liked Songs</span>
+                                                </div>
+                                                <img src="assets/icons/play_green.svg" alt="" class="play">
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="top-card">
+                                                <div>
+                                                    <img class="topcard-img" src="assets/images/album1.jfif" width="80" height="80" alt="">
+                                                    <span class="album-text">Liked Songs</span>
+                                                </div>
+                                                <img src="assets/icons/play_green.svg" alt="" class="play">
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="top-card">
+                                                <div>
+                                                    <img class="topcard-img" src="assets/images/album1.jfif" width="80" height="80" alt="">
+                                                    <span class="album-text">Liked Songs</span>
+                                                </div>
+                                                <img src="assets/icons/play_green.svg" alt="" class="play">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="subtitle">
+                                        <span>Trending</span>
+                                    </div>
+                                    <div class="vertical-card-holder toplists" >
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="subtitle">
+                                        <span>Pop</span>
+                                    </div>
+                                    <div class="vertical-card-holder pop">
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div class="vertical-card">
+                                                <img src="assets/images/vertical-card-cover.jfif" height="150" width="150" alt="">
+                                                <span class="vertical-card-title">Hot Hits Hindi</span>
+                                                <span class="vertical-card-subtitle">Hot Hits Hindi  Hot Hits Hindi</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/acdefefe13.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
