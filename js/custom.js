@@ -3,7 +3,7 @@ let http = new XMLHttpRequest();
 /*********
  auth
  */
-var redirect_uri = "http://192.168.2.102:8000/index.html";
+var redirect_uri = "https://omwadkar51.github.io/spotify-clone/home.html";
 var client_id = "aa92b0ba40024104951494af74eb5de2";
 var client_secret = "f0f8071f443146569375fab8add89f75";
 const AUTHORIZE = "https://accounts.spotify.com/authorize"
