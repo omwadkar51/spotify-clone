@@ -113,6 +113,8 @@ function featured_playlists () {
                 if (media.matches){
                     if(response.playlists.items[i].name.length > 16)
                         $(span).text(response.playlists.items[i].name.slice(0,13).concat('...'));
+                    else
+                        $(span).text(response.playlists.items[i].name);
                 }else
                     $(span).text(response.playlists.items[i].name);
                 let imgs = $('#main-card').children().children().children().children('img')[i];
