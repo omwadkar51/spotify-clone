@@ -81,7 +81,6 @@ function loadSidebarPlaylists(){
     http.onreadystatechange = function () {
         if (http.readyState === 4) {
             let playlists = JSON.parse(this.responseText);
-
             playlists.items.forEach( function (user){
                 let li = document.createElement("li");
                 let a = document.createElement('a');
@@ -161,6 +160,10 @@ function loadPlaylist() {
         },
         success: function (response){
             console.log(response);
+            if(response.name.length > 24){
+                $(".playlist-title").text(response.name);
+                $(".playlist-title").attr("font-size","48px");
+            }
             $(".playlist-title").text(response.name);
             $(".playlist-header").children('img').attr('src',response.images[0].url );
             $(".playlist-info").children().text(response.owner.display_name);
