@@ -126,6 +126,8 @@ function getUser() {
         },
         success: function (response){
             $('.profile').children('span').text(response.display_name);
+            let img = $('.profile').children('img');
+            $(img).attr('src', response.images.url);
         }
     });
 }
