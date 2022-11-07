@@ -116,6 +116,9 @@ a:hover{
     border-radius: 35px;
     align-items: center;
 }
+.profile img{
+    border-radius: 50%;
+}
 .top-bar{
     display: flex;
     justify-content: space-between;
