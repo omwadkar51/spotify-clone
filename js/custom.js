@@ -101,7 +101,8 @@ function featured_playlists () {
         success: function (response){
             var media = window.matchMedia("(max-width: 768px)")
             for (let i = 0; i < 7; i++) {
-                $('#main-card').children('a')[i].href = 'playlist.html?id='+response.playlists.items[i].id;
+                if($('#main-card').children('a')[i])
+                    $('#main-card').children('a')[i].href = 'playlist.html?id='+response.playlists.items[i].id;
                 let span = $('#main-card').children().children().children().children('span')[i];
                 if (media.matches){
                     if(response.playlists.items[i].name.length > 16)
@@ -141,7 +142,8 @@ function loadTrending (category,id) {
         },
         success: function (response){
             for (let i = 0; i < 8; i++) {
-                $('.vertical-card-holder'+'.'+category).children('a')[i].href = 'playlist.html?id='+response.playlists.items[i].id;
+                if($('.vertical-card-holder'+'.'+category).children('a')[i])
+                    $('.vertical-card-holder'+'.'+category).children('a')[i].href = 'playlist.html?id='+response.playlists.items[i].id;
                 let title = $('.'+category).children().children().children('.vertical-card-title')[i];
                 $(title).text(response.playlists.items[i].name);
                 let description = $('.'+ category).children().children().children('.vertical-card-subtitle')[i];
@@ -238,10 +240,6 @@ function loadPlaylist() {
     if(document.cookie != null)
         return document.cookie.split(';')[0].split('=')[1];
  }
-function getRefreshToken(){
-    if(document.cookie != null)
-        return document.cookie.split(';')[1].split('=')[1];
-}
  function start(){
     getUser();
     loadSidebarPlaylists();
