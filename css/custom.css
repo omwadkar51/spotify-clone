@@ -186,6 +186,9 @@ a:hover{
     margin-top: 16px;
     border-radius: 6px;
 }
+.vertical-card:hover{
+    background: #282828;
+}
 .vertical-card-title{
     font-weight: bold;
     font-size: 16px;

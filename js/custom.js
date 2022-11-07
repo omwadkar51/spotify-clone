@@ -1,7 +1,7 @@
 const url='https://api.spotify.com/v1';
 let http = new XMLHttpRequest();
 /*********
- auth
+ Authorization
  */
 var redirect_uri = "https://omwadkar51.github.io/spotify-clone/home.html";
 var client_id = "aa92b0ba40024104951494af74eb5de2";
