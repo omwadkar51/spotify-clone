@@ -10,13 +10,7 @@ const AUTHORIZE = "https://accounts.spotify.com/authorize"
 const TOKEN = "https://accounts.spotify.com/api/token";
 
 function onPageload(){
-    handleRedirect()
-    // setInterval(function () {
-    //     let body = "grant_type=refresh_token";
-    //     body += "&refresh_token=" + refresh_token;
-    //     body += "&client_id=" + client_id;
-    //     callAuthorizationApi(body);
-    // }, 3600);
+    handleRedirect();
 }
 function handleRedirect(){
     let code = getCode();
@@ -122,7 +116,19 @@ function featured_playlists () {
         }
     });
 }
-
+function getUser() {
+    $.ajax({
+        url: url + '/me',
+        type: 'GET',
+        dataType: 'json',
+        headers: {
+            "Authorization": "Bearer " + getToken(),
+        },
+        success: function (response){
+            $('.profile').children('span').text(response.display_name);
+        }
+    });
+}
 function loadTrending (category,id) {
     $.ajax({
         url: url + '/browse/categories/'+id+'/playlists',
@@ -148,6 +154,7 @@ function loadTrending (category,id) {
     });
 }
 function loadPlaylist() {
+    getUser();
     loadSidebarPlaylists();
     const urlparams = new URLSearchParams(window.location.search);
     let id = urlparams.get('id');
@@ -234,9 +241,9 @@ function getRefreshToken(){
         return document.cookie.split(';')[1].split('=')[1];
 }
  function start(){
-    console.log(document.cookie)
-     loadSidebarPlaylists();
-     featured_playlists();
-     loadTrending('toplists','toplists');
-     loadTrending('Pop','0JQ5DAqbMKFEC4WFtoNRpw');
+    getUser();
+    loadSidebarPlaylists();
+    featured_playlists();
+    loadTrending('toplists','toplists');
+    loadTrending('Pop','0JQ5DAqbMKFEC4WFtoNRpw');
  }
