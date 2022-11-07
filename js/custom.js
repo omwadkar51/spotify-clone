@@ -162,7 +162,7 @@ function loadPlaylist() {
             console.log(response);
             if(response.name.length > 24){
                 $(".playlist-title").text(response.name);
-                $(".playlist-title").attr("font-size","48px");
+                $(".playlist-title").css("font-size","48px");
             }
             $(".playlist-title").text(response.name);
             $(".playlist-header").children('img').attr('src',response.images[0].url );
